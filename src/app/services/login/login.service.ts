@@ -1,4 +1,9 @@
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/observable/of';
+import 'rxjs/add/operator/do';
+import 'rxjs/add/operator/delay';
+
 
 @Injectable()
 export class LoginService {
@@ -7,14 +12,14 @@ export class LoginService {
 
   }
 
-  isUserLoggedIn(): boolean {
-    return this.isLoggedin;
+  isUserLoggedIn():  Observable<boolean> {
+   return Observable.of(true).delay(1000).do(val => this.isLoggedin = true);
   }
 
 
-  Login(userName: string, password: string) {
+  Login(userName: string, password: string):Observable<boolean> {
     if (userName == "test" && password == "test") {
-      return this.isLoggedin = true;
+     return Observable.of(true).delay(1000).do(val => this.isLoggedin = true);
     }
   }
 
