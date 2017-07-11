@@ -7,19 +7,20 @@ import 'rxjs/add/operator/delay';
 
 @Injectable()
 export class LoginService {
-  isLoggedin: boolean;
+  private isLoggedin: boolean = false;
   constructor() {
 
   }
 
-  isUserLoggedIn():  Observable<boolean> {
-   return Observable.of(true).delay(1000).do(val => this.isLoggedin = true);
+  isUserLoggedIn(): Observable<boolean> {
+    return Observable.of(this.isLoggedin);
   }
 
 
-  Login(userName: string, password: string):Observable<boolean> {
-    if (userName == "test" && password == "test") {
-     return Observable.of(true).delay(1000).do(val => this.isLoggedin = true);
+  Login(userName: string, password: string): Observable<boolean> {
+    if (userName === 'test' && password === 'test') {
+      this.isLoggedin = true;
+      return Observable.of(this.isLoggedin);
     }
   }
 

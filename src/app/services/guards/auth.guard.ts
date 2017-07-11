@@ -1,18 +1,17 @@
 import { Injectable } from '@angular/core';
 import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
-import { LoginService} from '../login/login.service';
-import { Router} from '@angular/router';
+import { LoginService } from '../login/login.service';
+import { Router } from '@angular/router';
 
 @Injectable()
 export class AuthGuard implements CanActivate {
 
-constructor(private _loginService:LoginService, private _routerService:Router)
-{
+  constructor(private _loginService: LoginService, private _routerService: Router) {
 
-}   
+  }
 
- canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
+  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
     let url: string = state.url;
 
     return this.checkLogin(url);
@@ -25,8 +24,8 @@ constructor(private _loginService:LoginService, private _routerService:Router)
   // }
 
 
-   checkLogin(url: string): boolean {
-    if (this._loginService.isUserLoggedIn()) { return true; }
+  checkLogin(url: string): boolean {
+    this._loginService.isUserLoggedIn().subscribe((data) => console.log(data));
 
     // Store the attempted URL for redirecting
     //this.authService.redirectUrl = url;

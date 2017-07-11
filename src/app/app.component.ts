@@ -1,6 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, SimpleChanges } from '@angular/core';
 import { LoginService } from './services/login/login.service'
-import { Router} from '@angular/router'
+import { Router } from '@angular/router'
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/observable/of';
+import 'rxjs/add/operator/do';
+import 'rxjs/add/operator/delay';
+
 
 @Component({
   selector: 'app-root',
@@ -10,11 +15,11 @@ import { Router} from '@angular/router'
 export class AppComponent {
   title = 'app';
 
-  constructor(private _loginService: LoginService, private _routeService:Router) {
+  constructor(private _loginService: LoginService, private _routeService: Router) {
 
   }
-  Logout()
-  {
+
+  Logout() {
     this._loginService.Logout();
     this._routeService.navigate(['/logout']);
 

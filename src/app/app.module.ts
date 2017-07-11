@@ -25,7 +25,7 @@ import { AuthGuard } from './services/guards/auth.guard';
     BrowserModule, RouterModule.forRoot([
       { path: 'login', component: LoginComponent },
       { path: 'home', component: HomeComponent },
-      { path: 'customer', component: CustomerComponent, canActivate: [AuthGuard] },
+      { path: 'customer', component: CustomerComponent },
       { path: 'logout', component: LoginComponent },
       { path: '', redirectTo: '/home', pathMatch: 'full' },
       { path: '**', component: PageNotFoundComponent }
