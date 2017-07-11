@@ -97,8 +97,8 @@ module.exports = {
         "enforce": "pre",
         "test": /\.js$/,
         "loader": "source-map-loader",
-        "exclude": [
-          /\/node_modules\//
+          "exclude": [
+          path.join(__dirname, 'node_modules', '@angular/compiler')
         ]
       },
       {
