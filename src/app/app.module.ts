@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { UpperCasePipe } from '@angular/common'
 import { RoutingModule } from '../app/routingmodule/routing.module';
 
 import { AppComponent } from './app.component';
@@ -22,7 +23,7 @@ import { AuthGuard } from './services/guards/auth.guard';
   imports: [
     BrowserModule, RoutingModule, FormsModule, ReactiveFormsModule
   ],
-  providers: [LoginService],
+  providers: [LoginService, UpperCasePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

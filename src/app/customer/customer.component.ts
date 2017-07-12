@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UpperCasePipe } from '@angular/common';
 
 @Component({
   selector: 'app-customer',
@@ -6,10 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./customer.component.css']
 })
 export class CustomerComponent implements OnInit {
-
-  constructor() { }
+  name: string = 'test';
+  constructor(private _upper: UpperCasePipe) { }
 
   ngOnInit() {
+    this.name = this._upper.transform(this.name);
   }
 
 }
