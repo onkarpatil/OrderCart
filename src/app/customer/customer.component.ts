@@ -38,11 +38,17 @@ export class CustomerComponent implements OnInit {
 
     });
   }
-  
+
   addAddress() {
     let addressControl = <FormArray>this.customerForm.controls['address'];
     addressControl.push(this.buildForm());
   }
+
+  removeAddress(i: number) {
+    let addressControl = <FormArray>this.customerForm.controls['address'];
+    addressControl.removeAt(i);
+  }
+
 
 
 }

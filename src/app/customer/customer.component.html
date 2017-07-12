@@ -17,7 +17,7 @@
           <label>Email </label>
           <input type="email" formControlName="email">
         </div>
-        <div class="form-group ">
+        <div class="form-group  col-md-4">
           <label>Mobile </label>
           <input type="text" formControlName="mobile">
         </div>
@@ -25,35 +25,35 @@
           <label>DOB: </label>
           <input type="date" formControlName="dob">
         </div>
-        <div class="form-group ">
-          <input type="submit" class="btn btn-primary" value="submit">
-        </div>
 
       </div>
       <div class="panel panel-default">
-        <div class="panel-heading">Address
-          <button (click)="addAddress()">Add Address</button>
+        <div class="panel-heading">
+          Address
+          <button class="btn btn-primary pull-right" (click)="addAddress()">+</button>
         </div>
+
         <div class="panel-body">
           <div formArrayName="address">
             <div *ngFor="let addr of customerForm.controls.address.controls; let i=index">
               <div class="panel panel-default">
                 <div class="panel-heading"> Address {{i+1}}
+                  <button *ngIf="i > 0" class="btn btn-primary pull-right" (click)="removeAddress(i)">-</button>
                 </div>
                 <div class="panel-body" [formGroupName]="i">
-                  <div class="form-group ">
+                  <div class="form-group  col-md-4">
                     <label>Address Line1 </label>
                     <input type="text" formControlName="addressLine1">
                   </div>
-                  <div class="form-group ">
+                  <div class="form-group  col-md-4">
                     <label>Address Line2 </label>
                     <input type="text" formControlName="addressLine2">
                   </div>
-                  <div class="form-group ">
+                  <div class="form-group  col-md-4">
                     <label>City </label>
                     <input type="text" formControlName="city">
                   </div>
-                  <div class="form-group ">
+                  <div class="form-group  col-md-4">
                     <label>Pincode </label>
                     <input type="number" formControlName="pincode">
                   </div>
@@ -67,7 +67,15 @@
           </div>
         </div>
       </div>
+
+      <div class="panel-footer">
+        <div class="form-group">
+          <input type="submit" class="btn btn-primary" value="submit">
+        </div>
+      </div>
+
     </div>
+
   </form>
 </div>
 
