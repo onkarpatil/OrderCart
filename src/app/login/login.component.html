@@ -1,20 +1,18 @@
 <div class="container">
-  
-  <div class="col-md-6">
+  <div class="card card-container">
+    <!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
+    <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
+    <p id="profile-name" class="profile-name-card"></p>
     <form [formGroup]="loginForm" (submit)="login(loginForm.value)">
       <div class="form-group">
-        <label>UserName:</label>
         <input type="text" class="form-control" formControlName="userName" placeholder="Enter Username">
       </div>
       <div class="form-group">
-        <label>Password:</label>
         <input type="password" class="form-control" formControlName="password" placeholder="Enter Password here">
       </div>
       <div class="form-group">
         <input type="submit" class="btn btn-primary" value="Submit">
       </div>
     </form>
-
-    
   </div>
 </div>
