@@ -14,9 +14,16 @@ import 'rxjs/add/operator/delay';
 })
 export class AppComponent {
   title = 'app';
-
+  containerClass = "col-md-12";  // class="col-md-8"
   constructor(private _loginService: LoginService, private _routeService: Router) {
 
+  }
+  ngOnInit() {
+    this._loginService.isUserLoggedIn().subscribe((data) => {
+      if (data) {
+        this.containerClass = "col-md-8";
+      }
+    })
   }
 
   Logout() {
