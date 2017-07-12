@@ -1,7 +1,7 @@
 <div class="row">
   <form [formGroup]="customerForm">
 
-    <div class="panel panel-default">
+    <div class="panel panel-primary">
       <div class="panel-heading">Customer Information</div>
       <div class="panel-body">
 
@@ -27,18 +27,19 @@
         </div>
 
       </div>
-      <div class="panel panel-default">
+      
+      <div class="panel panel-primary">
         <div class="panel-heading">
           Address
-          <button class="btn btn-primary pull-right" (click)="addAddress()">+</button>
+          <button class="btn btn-success pull-right" (click)="addAddress()">+</button>
         </div>
 
         <div class="panel-body">
           <div formArrayName="address">
             <div *ngFor="let addr of customerForm.controls.address.controls; let i=index">
-              <div class="panel panel-default">
+              <div class="panel panel-primary">
                 <div class="panel-heading"> Address {{i+1}}
-                  <button *ngIf="i > 0" class="btn btn-primary pull-right" (click)="removeAddress(i)">-</button>
+                  <button *ngIf="i > 0" class="btn btn-success  pull-right" (click)="removeAddress(i)">-</button>
                 </div>
                 <div class="panel-body" [formGroupName]="i">
                   <div class="form-group  col-md-4">
@@ -70,7 +71,7 @@
 
       <div class="panel-footer">
         <div class="form-group">
-          <input type="submit" class="btn btn-primary" value="submit">
+          <input type="submit" class="btn btn-success" value="submit">
         </div>
       </div>
 
@@ -79,4 +80,4 @@
   </form>
 </div>
 
-{{customerForm.value | json}} {{customerForm.controls.address.controls}}
+<!--{{customerForm.value | json}} {{customerForm.controls.address.controls}}-->
