@@ -25,7 +25,7 @@ loginForm: FormGroup;
   login(user)
   {    
     let isLoginSuccess =  this._loginService.Login(user.userName, user.password);
-    this._routeService.navigate(['/home'])
+    this._routeService.navigate(['/customer'])
       
   }
 
