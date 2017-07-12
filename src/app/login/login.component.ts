@@ -17,16 +17,16 @@ loginForm: FormGroup;
 
   ngOnInit() {
     this.loginForm = this.fb.group({
-            userName: [null, Validators.required],
-            password: [null, Validators.required],           
+            userName: ['test', Validators.required],
+            password: ['test', Validators.required],           
         });
   }
 
   login(user)
   {    
     let isLoginSuccess =  this._loginService.Login(user.userName, user.password);
-    this._routeService.navigate(['/customer'])
-      
+    this._routeService.navigate(['/customer'])      
   }
+  
 
 }
