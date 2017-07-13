@@ -1,8 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 import { UpperCasePipe } from '@angular/common'
 import { RoutingModule } from '../app/routingmodule/routing.module';
+import { LoginModule } from '../app/login/login.module';
+import { SharedModule } from './shared//shared.module';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -15,13 +17,14 @@ import { AuthGuard } from './services/guards/auth.guard';
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
     PageNotFoundComponent,
-    HomeComponent,
-    CustomerComponent
+    HomeComponent
   ],
   imports: [
-    BrowserModule, RoutingModule, FormsModule, ReactiveFormsModule
+    BrowserModule,
+    SharedModule,
+    LoginModule,
+    RoutingModule
   ],
   providers: [LoginService, UpperCasePipe],
   bootstrap: [AppComponent]

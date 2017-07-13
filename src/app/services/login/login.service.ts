@@ -7,7 +7,7 @@ import 'rxjs/add/operator/delay';
 
 @Injectable()
 export class LoginService {
-  private isLoggedin: boolean = false;
+  isLoggedin: boolean = false;
   constructor() {
 
   }

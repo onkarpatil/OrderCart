@@ -12,15 +12,18 @@ import { AuthGuard } from '../services/guards/auth.guard';
 @NgModule({
   imports: [
     CommonModule, RouterModule.forRoot([
-      { path: 'login', component: LoginComponent },
       { path: 'home', component: HomeComponent },
-      { path: 'customer', component: CustomerComponent },
-      { path: 'logout', component: LoginComponent },
+      {
+        path: 'customer',
+        canActivate: [AuthGuard],
+        data: { preload: true },
+        loadChildren: 'app/customer/customer.module#CustomerModule'
+      },
       { path: '', redirectTo: '/home', pathMatch: 'full' },
       { path: '**', component: PageNotFoundComponent }
     ])
   ],
-  providers: [AuthGuard],
+  providers: [],
   exports: [RouterModule],
   declarations: []
 })

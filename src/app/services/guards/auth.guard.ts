@@ -13,7 +13,7 @@ export class AuthGuard implements CanActivate {
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
     let url: string = state.url;
-
+    console.log('In canActivate: ' + state.url);
     return this.checkLogin(url);
   }
 
@@ -25,8 +25,10 @@ export class AuthGuard implements CanActivate {
 
 
   checkLogin(url: string): boolean {
-    this._loginService.isUserLoggedIn().subscribe((data) => console.log(data));
 
+    if (this._loginService.isLoggedin) {
+      return true;
+    }
     // Store the attempted URL for redirecting
     //this.authService.redirectUrl = url;
 
