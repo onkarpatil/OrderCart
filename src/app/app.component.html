@@ -33,7 +33,7 @@
             <li class="divider"></li>
             <li><a href="#">Separated link</a></li>
             <li class="divider"></li>
-            <li *ngIf="_loginService.isUserLoggedIn() | async"><a (click)="Logout()" routerLinkActive="active">Logout</a></li>
+            <li *ngIf="_loginService.isUserLoggedIn() | async"><a class="pointer" (click)="Logout()"><span>Logout</span></a></li>
           </ul>
         </li>
       </ul>
@@ -105,7 +105,7 @@
             </li>
 
             <li *ngIf="_loginService.isUserLoggedIn() | async">
-              <a (click)="Logout()">
+              <a class="pointer" (click)="Logout()">
                 	<i class="glyphicon glyphicon-home"></i> Logout
               </a>
             </li>
