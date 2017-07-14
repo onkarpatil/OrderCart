@@ -3,15 +3,15 @@
     <!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
     <img id="profile-img" class="profile-img-card" src="../assets/images/profile.jpg" />
     <p id="profile-name" class="profile-name-card"></p>
-    <form [formGroup]="loginForm" (submit)="login(loginForm.value)">
+    <form [formGroup]="loginForm" (submit)="login(loginForm.value)" novalidate>
       <div class="form-group">
-        <input type="text" class="form-control" formControlName="userName" placeholder="Enter Username">
+        <input type="text" class="form-control" required formControlName="userName" placeholder="Enter Username">
       </div>
       <div class="form-group">
-        <input type="password" class="form-control" formControlName="password" placeholder="Enter Password here">
+        <input type="password" class="form-control" required formControlName="password" placeholder="Enter Password here">
       </div>
       <div class="form-group">
-        <input type="submit" class="btn btn-primary" value="Submit">
+        <button pButton  type="submit" [disabled]="loginForm.invalid" class="btn btn-primary" label="Submit"></button>
       </div>
     </form>
   </div>

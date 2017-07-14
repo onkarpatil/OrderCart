@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ButtonModule, PanelModule } from 'primeng/primeng';
 
 
 @NgModule({
@@ -8,7 +9,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     exports: [
         CommonModule,
         FormsModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        ButtonModule,
+        PanelModule
     ],
     declarations: [],
 })

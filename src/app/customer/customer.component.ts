@@ -23,7 +23,7 @@ export class CustomerComponent implements OnInit {
       address: this._fb.array([this.buildForm()]),
       email: ['', Validators.required],
       mobile: ['', Validators.required],
-      dob: ['']
+      dob: ['',Validators.required]
     });
   }
 

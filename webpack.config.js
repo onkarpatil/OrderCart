@@ -98,7 +98,8 @@ module.exports = {
         "test": /\.js$/,
         "loader": "source-map-loader",
           "exclude": [
-          path.join(__dirname, 'node_modules', '@angular/compiler')
+          path.join(__dirname, 'node_modules', '@angular/compiler'),
+          path.join(__dirname, 'node_modules', 'primeng')
         ]
       },
       {
