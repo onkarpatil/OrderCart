@@ -35,7 +35,7 @@
         </div>
 
         <div class="panel-body">
-          <div formArrayName="address">
+          <div formArrayName="address" class="clearfix">
             <div *ngFor="let addr of customerForm.controls.address.controls; let i=index">
               <div class="panel panel-primary">
                 <div class="panel-heading"> Address {{i+1}}
@@ -71,7 +71,7 @@
 
       <div class="panel-footer">
         <div class="form-group">
-          <input type="submit" class="btn btn-success" value="submit">
+          <input type="submit" [disabled]="customerForm.invalid" class="btn btn-success" value="submit">
         </div>
       </div>
 
@@ -79,5 +79,3 @@
 
   </form>
 </div>
-
-<!--{{customerForm.value | json}} {{customerForm.controls.address.controls}}-->
