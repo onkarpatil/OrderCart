@@ -18,7 +18,11 @@ export class OrderService {
   orderDetails: OrderDetails[];
   constructor() { }
 
-  getAllOrders(customerId: number) {
+  getAllOrders() {
+    return Observable.of(this.orders);
+  }
+
+  getOrderByCustomerId(customerId: number) {
     return Observable.of(this.orders.filter(data => data.customerId === customerId));
   }
 
