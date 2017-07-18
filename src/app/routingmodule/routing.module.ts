@@ -8,6 +8,7 @@ import { HomeComponent } from '../home/home.component';
 import { LoginService } from '../services/login/login.service';
 import { CustomerComponent } from '../customer/customer.component';
 import { AuthGuard } from '../services/guards/auth.guard';
+import { OrderComponent } from '../order/order.component';
 
 @NgModule({
   imports: [

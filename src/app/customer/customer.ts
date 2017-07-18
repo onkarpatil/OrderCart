@@ -1,4 +1,4 @@
-import { Address } from  '../common/address'
+import { Address } from '../common/address'
 
 export class Customer {
     id: number;

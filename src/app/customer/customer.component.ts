@@ -17,13 +17,12 @@ export class CustomerComponent implements OnInit {
 
   ngOnInit() {
     this.customerForm = this._fb.group({
-
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
       address: this._fb.array([this.buildForm()]),
       email: ['', Validators.required],
       mobile: ['', Validators.required],
-      dob: ['',Validators.required]
+      dob: ['', Validators.required]
     });
   }
 
@@ -40,12 +39,12 @@ export class CustomerComponent implements OnInit {
   }
 
   addAddress() {
-    let addressControl = <FormArray>this.customerForm.controls['address'];
+    const addressControl = <FormArray>this.customerForm.controls['address'];
     addressControl.push(this.buildForm());
   }
 
   removeAddress(i: number) {
-    let addressControl = <FormArray>this.customerForm.controls['address'];
+    const addressControl = <FormArray>this.customerForm.controls['address'];
     addressControl.removeAt(i);
   }
 
