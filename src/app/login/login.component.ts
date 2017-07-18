@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
   login(user) {
     this._loginService.Login(user.userName, user.password).subscribe(data => {
       if (data) {
-        this._routeService.navigate(['/customer'])
+        this._routeService.navigate(['/dashboard'])
       }
     });
 

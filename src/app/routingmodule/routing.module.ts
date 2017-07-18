@@ -9,11 +9,14 @@ import { LoginService } from '../services/login/login.service';
 import { CustomerComponent } from '../customer/customer.component';
 import { AuthGuard } from '../services/guards/auth.guard';
 import { OrderComponent } from '../order/order.component';
+import { DashboardComponent } from '../dashboard/dashboard.component';
+
 
 @NgModule({
   imports: [
     CommonModule, RouterModule.forRoot([
       { path: 'home', component: HomeComponent },
+      { path: 'dashboard', component: DashboardComponent },
       {
         path: 'customer',
         canActivate: [AuthGuard],
