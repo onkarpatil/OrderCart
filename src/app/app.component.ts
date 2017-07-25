@@ -18,7 +18,7 @@ export class AppComponent {
   title = 'app';
   _configApi: string;
   containerClass = 'col-md-12';  // class="col-md-8"
-  constructor(private _loginService: LoginService, private _routeService: Router
+  constructor(public _loginService: LoginService, private _routeService: Router
     , @Inject(APP_CONFIG) config: AppConfig) {
     this._configApi = config.title;
   }

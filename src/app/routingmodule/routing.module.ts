@@ -6,9 +6,7 @@ import { LoginComponent } from '../login/login.component';
 import { PageNotFoundComponent } from '../page-not-found/page-not-found.component';
 import { HomeComponent } from '../home/home.component';
 import { LoginService } from '../services/login/login.service';
-import { CustomerComponent } from '../customer/customer.component';
 import { AuthGuard } from '../services/guards/auth.guard';
-import { OrderComponent } from '../order/order.component';
 import { DashboardComponent } from '../dashboard/dashboard.component';
 
 
