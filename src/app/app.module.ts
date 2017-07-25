@@ -11,6 +11,9 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { HomeComponent } from './home/home.component';
 import { LoginService } from '../app/services/login/login.service';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import {  DI_CONFIG, APP_CONFIG } from '../app/services/app.config';
+import {  AppConfig } from '../app/services/Iapp.config';
+
 
 @NgModule({
   declarations: [
@@ -25,7 +28,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     LoginModule,
     RoutingModule
   ],
-  providers: [LoginService, UpperCasePipe],
+  providers: [LoginService, UpperCasePipe,
+    { provide: APP_CONFIG, useValue: DI_CONFIG }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
