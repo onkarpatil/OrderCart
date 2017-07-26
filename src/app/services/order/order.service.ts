@@ -16,9 +16,10 @@ export class OrderService {
     orderNumber: '001-ABC'
   }];
   orderDetails: OrderDetails[];
-  constructor() { }
+  constructor(private isAuthorized: boolean) { }
 
   getAllOrders() {
+    console.log(this.isAuthorized);
     return Observable.of(this.orders);
   }
 
