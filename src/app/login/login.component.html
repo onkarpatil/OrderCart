@@ -16,6 +16,7 @@
             </i>
           </span>
         <input type="password" class="form-control" required formControlName="password" placeholder="Enter Password here">
+        {{loginForm.get('password').errors | json}}
       </div>
       <div class="form-group">
         <button pButton  type="submit" [disabled]="loginForm.invalid" class="btn btn-primary" label="Submit"></button>
@@ -23,3 +24,4 @@
     </form>
   </div>
 </div>
+
