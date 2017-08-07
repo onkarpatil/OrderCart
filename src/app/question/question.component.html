@@ -1,0 +1,16 @@
+<div>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
+    <div *ngFor="let question of questions">
+      <app-df-question [question]="question" [form]="form" ></app-df-question>
+    </div>
+    <div class="form-row">
+      <button type="submit" [disabled]="!form.valid">Save</button>
+    </div>
+  </form>
+
+  <div *ngIf="payLoad" class="form-row">
+    <strong>Saved the following values</strong><br>{{payLoad}}
+  </div>
+</div>
+
+{{questions| json}}
