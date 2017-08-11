@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { UpperCasePipe } from '@angular/common'
 import { RoutingModule } from '../app/routingmodule/routing.module';
@@ -20,6 +20,7 @@ import { OrderComponent } from './order/order.component';
 import { OrderDetailResolver } from './services/order/order-details-resolver.service';
 import { TodoComponent } from './todo/todo.component';
 import { ToDoService } from './services/todo/todo.service';
+import { ApiInterceptor } from './interceptor/http-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { ToDoService } from './services/todo/todo.service';
     HttpClientModule
   ],
   providers: [LoginService, UpperCasePipe, ToDoService,
-    { provide: APP_CONFIG, useValue: DI_CONFIG }],
+    { provide: APP_CONFIG, useValue: DI_CONFIG },
+    { provide: HTTP_INTERCEPTORS, useClass: ApiInterceptor, multi: true }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

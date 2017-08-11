@@ -17,9 +17,7 @@ export class ToDoService {
     }
 
     addTodoItem(item: ToDo) {
-        return this._http.post<ToDo>('https://jsonplaceholder.typicode.com/todos', item, {
-            headers: new HttpHeaders().set('Token', 'TestToken').set('value', 'test')
-        });
+        return this._http.post<ToDo>('https://jsonplaceholder.typicode.com/todos', item);
     }
 
 }
