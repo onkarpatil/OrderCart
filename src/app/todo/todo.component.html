@@ -1,0 +1,49 @@
+<h1>
+  Todo List
+</h1>
+
+<form #todoForm="ngForm" novalidate (submit)="addToDo()">
+  <div class="form-group">
+    <input class="form-control" type="text" [(ngModel)]="todo.title" name="title" required placeholder="Title">
+  </div>
+  <div class="form-group">
+    <input class="form-control" type="text" [(ngModel)]="todo.body" name="body" required placeholder="Body">
+  </div>
+  <div class="form-group">
+    <input class="form-control" type="number" [(ngModel)]="todo.userId" name="userId" required placeholder="User Id">
+  </div>
+  <div class="form-group">
+    <button class="form-control" [disabled]="todoForm.invalid" type="submit" class="btn btn-primary">Submit</button>
+  </div>
+</form>
+
+<table class="table">
+  <tr>
+    <th>
+      UserId
+    </th>
+    <th>
+      Id
+    </th>
+    <th>
+      Title
+    </th>
+    <th>
+      Completed
+    </th>
+  </tr>
+  <tr *ngFor="let todo of todoList">
+    <td>
+      {{todo.userId}}
+    </td>
+    <td>
+      {{todo.id}}
+    </td>
+    <td>
+      {{todo.title}}
+    </td>
+    <td>
+      {{todo.completed}}
+    </td>
+  </tr>
+</table>

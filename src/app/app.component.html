@@ -84,7 +84,7 @@
 							Account Settings </a>
             </li>
             <li>
-              <a href="#" target="_blank">
+              <a [routerLink]="['/todo']" routerLinkActive="active">
 							<i class="glyphicon glyphicon-ok"></i>
 							Add Customers </a>
             </li>
@@ -114,7 +114,6 @@
         <!-- END MENU -->
       </div>
     </div>
-   
     <div [ngClass]="{'col-md-8': _loginService.isUserLoggedIn() | async}">
       <router-outlet></router-outlet>
        <div>
@@ -123,7 +122,4 @@
     </div>
     </div>
   </div>
-
-
-
 </div>

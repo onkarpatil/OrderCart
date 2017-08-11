@@ -8,6 +8,7 @@ import { HomeComponent } from '../home/home.component';
 import { LoginService } from '../services/login/login.service';
 import { AuthGuard } from '../services/guards/auth.guard';
 import { DashboardComponent } from '../dashboard/dashboard.component';
+import { TodoComponent } from '../todo/todo.component';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { DashboardComponent } from '../dashboard/dashboard.component';
         data: { preload: true },
         loadChildren: 'app/customer/customer.module#CustomerModule'
       },
+      { path: 'todo', component: TodoComponent },
       { path: '', redirectTo: '/home', pathMatch: 'full' },
       { path: '**', component: PageNotFoundComponent }
     ])

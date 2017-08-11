@@ -5,7 +5,7 @@ import { CustomerComponent } from './customer.component';
 import { OrderComponent } from '../order/order.component';
 import { CustomerdetailsComponent } from './detail/customerdetails.component';
 import { CustomerService } from '../services/customer/customer.service';
-
+import { OrderDetailResolver } from '../services/order/order-details-resolver.service';
 @NgModule({
     imports: [
         SharedModule,
@@ -19,6 +19,6 @@ import { CustomerService } from '../services/customer/customer.service';
         OrderComponent,
         CustomerdetailsComponent
     ],
-    providers: [CustomerService]
+    providers: [OrderDetailResolver, CustomerService]
 })
 export class CustomerModule { }
