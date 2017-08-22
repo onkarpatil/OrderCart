@@ -14,6 +14,14 @@ export class OrderService {
     details: [],
     orderId: 1,
     orderNumber: '001-ABC'
+  },
+  {
+    amount: 200,
+    customerId: 2,
+    orderDate: new Date('10-Nov-2016'),
+    details: [],
+    orderId: 2,
+    orderNumber: '001-ABC-VFC'
   }];
   orderDetails: OrderDetails[];
   constructor(private isAuthorized: boolean) { }

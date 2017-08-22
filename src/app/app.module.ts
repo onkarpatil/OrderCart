@@ -30,7 +30,7 @@ import { ApiInterceptor } from './interceptor/http-interceptor.service';
     DashboardComponent,
     QuestionComponent,
     DynamicFormQuestionComponent,
-    TodoComponent,
+    TodoComponent
   ],
   imports: [
     BrowserModule,

@@ -6,18 +6,26 @@ import { OrderComponent } from '../order/order.component';
 import { CustomerdetailsComponent } from './detail/customerdetails.component';
 import { CustomerService } from '../services/customer/customer.service';
 import { OrderDetailResolver } from '../services/order/order-details-resolver.service';
+import { OrderdetailsComponent } from '../order/orderdetails/orderdetails.component';
 @NgModule({
     imports: [
         SharedModule,
         RouterModule.forChild([
             { path: '', component: CustomerComponent },
-            { path: ':id/order', component: OrderComponent }
+            {
+                path: ':id/order', component: OrderComponent,
+                children: [{
+                    path: ':id',
+                    component: OrderdetailsComponent
+                }]
+            }
         ])
     ],
     declarations: [
         CustomerComponent,
         OrderComponent,
-        CustomerdetailsComponent
+        CustomerdetailsComponent,
+        OrderdetailsComponent
     ],
     providers: [OrderDetailResolver, CustomerService]
 })

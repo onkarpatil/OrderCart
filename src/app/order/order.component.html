@@ -17,7 +17,7 @@
   <tbody>
     <tr *ngFor="let order of orders">
       <td>
-        {{order.orderNumber}}
+        <a [routerLink]="[order.orderNumber]">{{order.orderNumber}}</a>
       </td>
       <td>
         {{order.orderDate | date}}
@@ -28,3 +28,5 @@
     </tr>
   </tbody>
 </table>
+
+<router-outlet></router-outlet>
