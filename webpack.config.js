@@ -99,7 +99,8 @@ module.exports = {
         "loader": "source-map-loader",
           "exclude": [
           path.join(__dirname, 'node_modules', '@angular/compiler'),
-          path.join(__dirname, 'node_modules', 'primeng')
+          path.join(__dirname, 'node_modules', 'primeng'),
+          path.join(__dirname, 'node_modules', 'ng2-toastr/ng2-toastr')
         ]
       },
       {

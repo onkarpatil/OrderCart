@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 
 import { UpperCasePipe } from '@angular/common'
 import { RoutingModule } from '../app/routingmodule/routing.module';
@@ -21,6 +22,8 @@ import { OrderDetailResolver } from './services/order/order-details-resolver.ser
 import { TodoComponent } from './todo/todo.component';
 import { ToDoService } from './services/todo/todo.service';
 import { ApiInterceptor } from './interceptor/http-interceptor.service';
+import { ToastModule } from 'ng2-toastr/ng2-toastr'
+import { ToastsManager, ToastOptions } from 'ng2-toastr/ng2-toastr';
 
 @NgModule({
   declarations: [
@@ -37,11 +40,13 @@ import { ApiInterceptor } from './interceptor/http-interceptor.service';
     SharedModule,
     LoginModule,
     RoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    ToastModule.forRoot()
   ],
   providers: [LoginService, UpperCasePipe, ToDoService,
     { provide: APP_CONFIG, useValue: DI_CONFIG },
-    { provide: HTTP_INTERCEPTORS, useClass: ApiInterceptor, multi: true }],
+    { provide: HTTP_INTERCEPTORS, useClass: ApiInterceptor, multi: true }, ToastsManager, ToastOptions],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
