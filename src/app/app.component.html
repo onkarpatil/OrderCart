@@ -109,6 +109,9 @@
                 	<i class="glyphicon glyphicon-home"></i> Logout
               </a>
             </li>
+            <li>
+                <a [routerLink]="[{ outlets: { popup: ['compose'] } }]">Contact</a>
+            </li>
           </ul>
         </div>
         <!-- END MENU -->
@@ -116,6 +119,7 @@
     </div>
     <div [ngClass]="{'col-md-8': _loginService.isUserLoggedIn() | async}">
       <router-outlet></router-outlet>
+      <router-outlet name="popup"></router-outlet>
        <!-- <div>
       <h2>Job Application for Heroes</h2>
       <app-question [questions]="questions"></app-question>

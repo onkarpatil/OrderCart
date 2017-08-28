@@ -24,6 +24,7 @@ import { ToDoService } from './services/todo/todo.service';
 import { ApiInterceptor } from './interceptor/http-interceptor.service';
 import { ToastModule } from 'ng2-toastr/ng2-toastr'
 import { ToastsManager, ToastOptions } from 'ng2-toastr/ng2-toastr';
+import { ComposeMessageComponent } from './compose-message/compose-message.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { ToastsManager, ToastOptions } from 'ng2-toastr/ng2-toastr';
     DashboardComponent,
     QuestionComponent,
     DynamicFormQuestionComponent,
-    TodoComponent
+    TodoComponent,
+    ComposeMessageComponent
   ],
   imports: [
     BrowserModule,

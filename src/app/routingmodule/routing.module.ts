@@ -9,7 +9,7 @@ import { LoginService } from '../services/login/login.service';
 import { AuthGuard } from '../services/guards/auth.guard';
 import { DashboardComponent } from '../dashboard/dashboard.component';
 import { TodoComponent } from '../todo/todo.component';
-
+import { ComposeMessageComponent } from '../compose-message/compose-message.component';
 
 @NgModule({
   imports: [
@@ -21,6 +21,11 @@ import { TodoComponent } from '../todo/todo.component';
         canActivate: [AuthGuard],
         data: { preload: true },
         loadChildren: 'app/customer/customer.module#CustomerModule'
+      },
+      {
+        path: 'compose',
+        component: ComposeMessageComponent,
+        outlet: 'popup'
       },
       { path: 'todo', component: TodoComponent },
       { path: '', redirectTo: '/home', pathMatch: 'full' },
