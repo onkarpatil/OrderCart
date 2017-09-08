@@ -1,22 +1,24 @@
 <h1>
-  Order Details 
+  Order Details
 </h1>
 
 <table class="table">
   <thead>
     <th>
-    Order Number
+      Order Number
     </th>
-     <th>
-       Order Date
+    <th>
+      Order Date
     </th>
-      <th>
-        Amount
+    <th>
+      Amount
     </th>
+    <th>Edit</th>
   </thead>
   <tbody>
     <tr *ngFor="let order of orders">
       <td>
+
         <a [routerLink]="[order.orderNumber]">{{order.orderNumber}}</a>
       </td>
       <td>
@@ -24,6 +26,9 @@
       </td>
       <td>
         {{order.amount}}
+      </td>
+      <td>
+        <button md-raised-button (click)="openPupUp(order)" color="primary">Edit</button>
       </td>
     </tr>
   </tbody>

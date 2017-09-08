@@ -7,6 +7,7 @@ import { CustomerdetailsComponent } from './detail/customerdetails.component';
 import { CustomerService } from '../services/customer/customer.service';
 import { OrderDetailResolver } from '../services/order/order-details-resolver.service';
 import { OrderdetailsComponent } from '../order/orderdetails/orderdetails.component';
+import { EditComponent } from '../order/edit/edit.component';
 @NgModule({
     imports: [
         SharedModule,
@@ -25,8 +26,10 @@ import { OrderdetailsComponent } from '../order/orderdetails/orderdetails.compon
         CustomerComponent,
         OrderComponent,
         CustomerdetailsComponent,
-        OrderdetailsComponent
+        OrderdetailsComponent,
+        EditComponent
     ],
+    entryComponents: [EditComponent],
     providers: [OrderDetailResolver, CustomerService]
 })
 export class CustomerModule { }

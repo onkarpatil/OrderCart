@@ -1,17 +1,19 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { ButtonModule, PanelModule } from 'primeng/primeng';
+
+import { MdButtonModule, MdDialogModule , MdInputModule } from '@angular/material';
 
 
 @NgModule({
-    imports: [CommonModule],
+    imports: [CommonModule, MdButtonModule, MdDialogModule],
     exports: [
         CommonModule,
         FormsModule,
         ReactiveFormsModule,
-        ButtonModule,
-        PanelModule
+        MdButtonModule,
+        MdDialogModule,
+        MdInputModule
     ],
     declarations: [],
 })

@@ -1,0 +1,18 @@
+<!-- <p>
+  edit works!
+</p>
+{{data |json}} {{order| json}} -->
+<h2 md-dialog-title>Edit Order</h2>
+<md-dialog-content>
+  <form #editOrder="ngForm" (submit)="submit()" novalidate>
+    <md-form-field class="example-full-width">
+      <input  name="amount" mdInput placeholder="Amount" [(ngModel)]="order.amount">
+    </md-form-field>
+  </form>
+
+</md-dialog-content>
+<md-dialog-actions>
+  <button md-raised-button color="primary" md-dialog-close>No</button>
+  <!-- Can optionally provide a result for the closing dialog. -->
+  <button md-raised-button color="primary" (click)="save()">Save</button>
+</md-dialog-actions>
